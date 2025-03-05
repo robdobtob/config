@@ -45,3 +45,6 @@ if not_installed tmux; then
   brew install tmux
 fi
 ln -fs $CONFIG_DIR/.tmux.config ~/.tmux.config
+
+# git
+ln -fs $CONFIG_DIR/.gitconfig ~/.gitconfig

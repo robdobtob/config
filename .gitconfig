@@ -1,0 +1,12 @@
+# This is Git's per-user configuration file.
+[user]
+name = bobert
+email = robrob55@bigpond.net.au
+
+[alias]
+  adog = log --all --decorate --oneline --graph
+  dog = log --decorate --oneline --graph 
+  can = commit --amend --no-edit
+  pushf = push --force-with-lease
+[push]
+	autoSetupRemote = true
