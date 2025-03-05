@@ -11,6 +11,9 @@ set vb t_vb=
 """""""""""""""""
 " Software Things
 """""""""""""""""
+"" yank
+" yank to both default register and clipboard
+vnoremap Y "+y
 
 "" Tabs
 set expandtab
