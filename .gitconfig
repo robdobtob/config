@@ -8,5 +8,11 @@ email = robrob55@bigpond.net.au
   dog = log --decorate --oneline --graph 
   can = commit --amend --no-edit
   pushf = push --force-with-lease
+  rim = rebase -i origin/main
 [push]
 	autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

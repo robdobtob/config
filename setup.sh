@@ -17,10 +17,6 @@ not_installed() {
   if hash $1 2>/dev/null; then
     return 1
   else 
-    if [[ -z $DEBUG ]]; then
-      echo "Running debug so not actually installing $1"
-      return 1
-    fi
     return 0
   fi
 }
@@ -44,7 +40,21 @@ ln -fs $CONFIG_DIR/.vimrc ~/.vimrc
 if not_installed tmux; then
   brew install tmux
 fi
-ln -fs $CONFIG_DIR/.tmux.config ~/.tmux.config
+ln -fs $CONFIG_DIR/.tmux.conf ~/.tmux.conf
 
 # git
 ln -fs $CONFIG_DIR/.gitconfig ~/.gitconfig
+brew install git-lfs
+git lfs install
+
+# Ruby
+# used by jekyll for my blog
+if not_installed ruby-install && not_installed chruby; then
+  echo "Installing ruby!"
+  brew install chruby ruby-install
+fi
+ruby-install 3.4.1
+gem update --system # was having issues installing bundles due to outdated gem
+
+# Once we are done, reload the current shells profile
+source ~/.zshrc

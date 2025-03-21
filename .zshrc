@@ -12,7 +12,7 @@ ZSH_THEME="bobert"
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Disable marking untracked files under VCS as dirty.
 # This makes repository status check for large repositories
@@ -43,3 +43,9 @@ source $ZSH/oh-my-zsh.sh
 ##################
 ## BREW ##
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+## RUBY ##
+source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.4.1
+
