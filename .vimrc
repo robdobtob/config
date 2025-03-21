@@ -37,6 +37,9 @@ nnoremap <C-d> <C-d>zz
 
 cnoreabbrev tn tabnew
 
+" Search behaviour to only be case sensitive if search term has uppercase
+set smartcase
+
 """""""""""""""""
 " Software Things
 """""""""""""""""

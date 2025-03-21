@@ -1,0 +1,3 @@
+[submodule "vim/pack/my-plugins/start/conflict-marker.vim"]
+	path = vim/pack/my-plugins/start/conflict-marker.vim
+	url = https://github.com/rhysd/conflict-marker.vim.git

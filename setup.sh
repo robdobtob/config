@@ -35,6 +35,8 @@ ln -fs $CONFIG_DIR/.zshrc ~/.zshrc
 
 # Vim
 ln -fs $CONFIG_DIR/.vimrc ~/.vimrc
+# symlink entire vim directory so can propagate plugins
+ln -fs $CONFIG_DIR/vim ~/.vim
 
 # TMUX
 if not_installed tmux; then
@@ -53,8 +55,9 @@ if not_installed ruby-install && not_installed chruby; then
   echo "Installing ruby!"
   brew install chruby ruby-install
 fi
-ruby-install 3.4.1
-gem update --system # was having issues installing bundles due to outdated gem
+if ! ruby -v | grep 3.4.1 -q; then
+  ruby-install 3.4.1
+  gem update --system # was having issues installing bundles due to outdated gem
+fi
 
-# Once we are done, reload the current shells profile
-source ~/.zshrc
+
