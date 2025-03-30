@@ -60,4 +60,6 @@ if ! ruby -v | grep 3.4.1 -q; then
   gem update --system # was having issues installing bundles due to outdated gem
 fi
 
+# Misc Utils
+brew install htop
 

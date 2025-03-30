@@ -49,3 +49,8 @@ source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
 source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.4.1
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/robrob/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

@@ -57,5 +57,5 @@ set shiftwidth=0
 " Text Editing
 """""""""""""""""
 " Line split on every fullstop. used to separate markdown lines
-vnoremap gl :s/\. /.\r/g<CR><ESC>
+vnoremap gl :s/\. /.\r/g<CR>:'[,']norm ==<CR><ESC>
 
